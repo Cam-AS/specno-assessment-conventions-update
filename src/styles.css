@@ -1,17 +1,9 @@
+@import "./styles/variables.css";
+@import "./styles/overrides.css";
+
 body {
-  background-color: #f8fafc;
-  /* font-family: 'inter'; */
-  color: #484954;
-}
-
-/* @font-face {
-  font-family: inter;
-  src: url(assets/font/Inter-Regular.ttf) format("opentype");
-} */
-
-.icon {
-  width: 17px;
-  height: 17.4px;
+  background-color: var(--lightGrey);
+  color: var(--darkPurple);
 }
 
 .pointer {
@@ -25,12 +17,6 @@ body {
   margin: auto;
   margin-top: calc((100vh / 2) - 50px);
   overflow: hidden;
-}
-
-.chevron {
-  width: 24px;
-  height: 24.56px;
-  margin-right: 2em;
 }
 
 .wh-24 {
@@ -60,6 +46,10 @@ body {
 
 .mw-70 {
   max-width: 70px;
+}
+
+.mw-1000 {
+  max-width: 1000px;
 }
 
 .fs-12 {
@@ -100,58 +90,64 @@ body {
 
 .horizontal-line {
   height: 1px;
-  border-top: 0.4px solid #0d4477;
+  border-top: 0.4px solid var(--horizontalLineBlue);
 }
 
 .grey {
-  background: grey;
+  background: var(--lightGrey);
 }
 
 .text-color {
-  color: #484954;
+  color: var(--darkPurple);
 }
 
-.max-width-1000 {
-  max-width: 1000px;
+.blue-text {
+  color: var(--text);
+  font-size: 14px;
+}
+
+.icon {
+  width: 17px;
+  height: 17.4px;
+}
+
+.chevron {
+  width: 24px;
+  height: 24.56px;
+  margin-right: 2em;
 }
 
 .custom-button {
-  background: #489dda;
-  border-radius: 100px;
+  background: var(--lightBlue);
+  border-radius: var(--border100);
   height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 14px;
-  color: #f8fafc;
+  color: var(--lightGrey);
   max-width: 232px;
 }
 
 .custom-button-red {
-  background: #f44336;
-  border-radius: 100px;
+  background: var(--darkRed);
+  border-radius: var(--border100);
   height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 14px;
-  color: #f8fafc;
+  color: var(--offWhite);
   max-width: 232px;
-}
-
-.blue-text {
-  color: #489dda;
-  font-size: 14px;
 }
 
 .snackbar {
   min-width: 50px;
   margin-left: -125px;
-  border-radius: 8px;
-  background-color: #333;
-  color: #fff;
+  border-radius: var(--border8);
+  background-color: var(--snackBarBackground);
+  color: var(--snackBarTextWhite);
   text-align: center;
-  border-radius: 2px;
   padding: 5px;
   position: fixed;
   z-index: 1;

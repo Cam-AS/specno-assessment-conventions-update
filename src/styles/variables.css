@@ -1,0 +1,15 @@
+:root {
+  --lightGrey: #f8fafc;
+  --darkPurple: #484954;
+  --darkGrey: #808080;
+  --lightBlue: #489dda;
+  --darkRed: #f44336;
+  --horizontalLineBlue: #0d4477;
+  --offWhite: #f8fafc;
+  --textBlue: #489dda;
+  --snackBarBackground: #333;
+  --snackBarTextWhite: #fff;
+
+  --border8: 8px;
+  --border100: 100px;
+}
