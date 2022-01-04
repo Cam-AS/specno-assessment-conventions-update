@@ -10,39 +10,35 @@ body {
   cursor: pointer;
 }
 
-.mw-43 {
+.g-mw-43 {
   max-width: 43px;
 }
 
-.mw-55 {
+.g-mw-55 {
   max-width: 55px;
 }
 
-.mw-70 {
-  max-width: 70px;
-}
-
-.mw-1000 {
+.g-mw-1000 {
   max-width: 1000px;
 }
 
-.fs-12 {
+.g-fs-12 {
   font-size: var(--fontSize12);
 }
 
-.fs-18 {
+.g-fs-18 {
   font-size: var(--fontSize18);
 }
 
-.fs-20 {
+.g-fs-20 {
   font-size: var(--fontSize20);
 }
 
-.fs-24 {
+.g-fs-24 {
   font-size: var(--fontSize24);
 }
 
-.fw-b {
+.g-fw-b {
   font-weight: bold;
 }
 

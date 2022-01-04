@@ -33,6 +33,10 @@
   border-top-right-radius: 8px;
 }
 
+.mw-70 {
+  max-width: 70px;
+}
+
 .text-color {
   color: #484954;
 }

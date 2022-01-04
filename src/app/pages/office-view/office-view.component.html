@@ -1,4 +1,4 @@
-<div class="container my-3 mw-1000">
+<div class="container my-3 g-mw-1000">
   <div *ngIf="isFormValid" class="g-snackbar">Please fill in all fields.</div>
   
   <div class="row mb-3">
@@ -6,7 +6,7 @@
       <img src="assets/icons/arrow-left.svg" />
     </div>
     <div class="col d-flex justify-content-center">
-      <div class="fs-18">Office</div>
+      <div class="g-fs-18">Office</div>
     </div>
     <div class="col-1"></div>
   </div>
@@ -37,11 +37,11 @@
     <div class="counter-container">
       <div class="row">
         <div class="col">
-          <div class="fs-24 fw-600">Staff Members In Office</div>
+          <div class="g-fs-24 fw-600">Staff Members In Office</div>
         </div>
         <div class="col-2 d-flex align-items-center justify-content-end">
           <div>
-            <div class="fs-18">{{ members.length }}</div>
+            <div class="g-fs-18">{{ members.length }}</div>
           </div>
         </div>
       </div>
@@ -89,7 +89,7 @@
       <div class="modal-content p-3 border-radius">
         <div class="row">
           <div class="col">
-            <div class="fs-24 fw-800 ms-3">New Staff Member</div>
+            <div class="g-fs-24 fw-800 ms-3">New Staff Member</div>
           </div>
           <div
             class="col-2 d-flex align-items-center justify-content-center g-pointer"
@@ -156,7 +156,7 @@
             <img src="assets/icons/arrow-left.svg" />
           </div>
           <div class="col pe-0">
-            <div class="fs-24 fw-800 ms-3">New Staff Member</div>
+            <div class="g-fs-24 fw-800 ms-3">New Staff Member</div>
           </div>
           <div
             class="col-2 d-flex align-items-center justify-content-center g-pointer"
@@ -165,12 +165,12 @@
             <img src="assets/icons/close-circle.svg" />
           </div>
         </div>
-        <div class="fs-24 fw-600 my-3">Avatar</div>
+        <div class="g-fs-24 fw-600 my-3">Avatar</div>
 
         <div class="row justify-content-center mb-2">
           <div
             *ngFor="let avatar of avatars; let i = index"
-            class="mw-55 mx-2 my-1 d-flex justify-content-center g-pointer"
+            class="g-mw-55 mx-2 my-1 d-flex justify-content-center g-pointer"
           >
             <img
               [ngClass]="toggle[i] ? 'dark' : 'null'"
