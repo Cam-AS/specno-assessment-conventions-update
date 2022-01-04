@@ -10,6 +10,17 @@
   padding: 10px;
 }
 
+.icon {
+  width: 17px;
+  height: 17.4px;
+}
+
+.chevron {
+  width: 24px;
+  height: 24.56px;
+  margin-right: 2em;
+}
+
 .horizontal-line {
   height: 1px;
   border-top: 0.4px solid var(--horizontalLineBlue);
@@ -32,6 +43,11 @@
 
 .show {
   display: contents;
+}
+
+.wh-24 {
+  width: 24px;
+  height: 24px;
 }
 
 .rotate {

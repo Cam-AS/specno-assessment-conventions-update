@@ -10,23 +10,6 @@ body {
   cursor: pointer;
 }
 
-.wh-24 {
-  width: 24px;
-  height: 24px;
-}
-
-.w-100 {
-  width: 100%;
-}
-
-.w-90 {
-  width: 90%;
-}
-
-.w-10 {
-  width: 10%;
-}
-
 .mw-43 {
   max-width: 43px;
 }
@@ -44,55 +27,28 @@ body {
 }
 
 .fs-12 {
-  font-size: 12px;
+  font-size: var(--fontSize12);
 }
 
 .fs-18 {
-  font-size: 18px;
+  font-size: var(--fontSize18);
 }
 
 .fs-20 {
-  font-size: 20px;
+  font-size: var(--fontSize20);
 }
 
 .fs-24 {
-  font-size: 24px;
-}
-
-.fw-400 {
-  font-weight: 400 !important;
-}
-
-.fw-800 {
-  font-weight: 800 !important;
-}
-
-.fw-700 {
-  font-weight: 700 !important;
-}
-
-.fw-600 {
-  font-weight: 600 !important;
+  font-size: var(--fontSize24);
 }
 
 .fw-b {
   font-weight: bold;
 }
 
-.blue-text {
+.g-blue-text {
   color: var(--text);
   font-size: 14px;
-}
-
-.icon {
-  width: 17px;
-  height: 17.4px;
-}
-
-.chevron {
-  width: 24px;
-  height: 24.56px;
-  margin-right: 2em;
 }
 
 .g-custom-button {
