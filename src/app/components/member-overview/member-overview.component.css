@@ -1,0 +1,21 @@
+.blue-border-container {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e8f3fc;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.dark {
+  outline: 4px solid #475569;
+  border-radius: 50px;
+}
+
+::ng-deep .modal-dialog {
+  max-width: 500px !important;
+}
+
+::ng-deep .modal-content {
+  border-radius: 8px;
+  width: 96%;
+}

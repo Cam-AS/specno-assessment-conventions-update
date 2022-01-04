@@ -1,0 +1,30 @@
+.card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e8f3fc;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 0px;
+  border-left: none;
+  padding: 10px;
+}
+
+.stripes-box {
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: contents;
+}
+
+.rotate {
+  transform: rotateX(180deg);
+}

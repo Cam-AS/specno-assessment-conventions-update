@@ -1,0 +1,161 @@
+body {
+  background-color: #f8fafc;
+  /* font-family: 'inter'; */
+  color: #484954;
+}
+
+/* @font-face {
+  font-family: inter;
+  src: url(assets/font/Inter-Regular.ttf) format("opentype");
+} */
+
+.icon {
+  width: 17px;
+  height: 17.4px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  margin: auto;
+  margin-top: calc((100vh / 2) - 50px);
+  overflow: hidden;
+}
+
+.chevron {
+  width: 24px;
+  height: 24.56px;
+  margin-right: 2em;
+}
+
+.wh-24 {
+  width: 24px;
+  height: 24px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.w-10 {
+  width: 10%;
+}
+
+.mw-43 {
+  max-width: 43px;
+}
+
+.mw-55 {
+  max-width: 55px;
+}
+
+.mw-70 {
+  max-width: 70px;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+.fs-24 {
+  font-size: 24px;
+}
+
+.fw-400 {
+  font-weight: 400 !important;
+}
+
+.fw-800 {
+  font-weight: 800 !important;
+}
+
+.fw-700 {
+  font-weight: 700 !important;
+}
+
+.fw-600 {
+  font-weight: 600 !important;
+}
+
+.fw-b {
+  font-weight: bold;
+}
+
+.horizontal-line {
+  height: 1px;
+  border-top: 0.4px solid #0d4477;
+}
+
+.grey {
+  background: grey;
+}
+
+.text-color {
+  color: #484954;
+}
+
+.max-width-1000 {
+  max-width: 1000px;
+}
+
+.custom-button {
+  background: #489dda;
+  border-radius: 100px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #f8fafc;
+  max-width: 232px;
+}
+
+.custom-button-red {
+  background: #f44336;
+  border-radius: 100px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #f8fafc;
+  max-width: 232px;
+}
+
+.blue-text {
+  color: #489dda;
+  font-size: 14px;
+}
+
+.snackbar {
+  min-width: 50px;
+  margin-left: -125px;
+  border-radius: 8px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 5px;
+  position: fixed;
+  z-index: 1;
+  top: 10px;
+  right: 10px;
+  left: 80%;
+}

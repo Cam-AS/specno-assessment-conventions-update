@@ -1,0 +1,152 @@
+<div class="mt-4">
+  <div class="row align-items-center justify-content-center">
+    <div class="col-3 d-flex justify-content-center">
+      <img src="{{ member.avatar }}" />
+    </div>
+    <div class="col">
+      <div class="ms-2">{{ member.name + " " + member.surname }}</div>
+    </div>
+    <div class="col-2 d-flex justify-content-center pointer" (click)="openModal1(template)">
+      <img src="assets/icons/elipse.svg" />
+    </div>
+  </div>
+</div>
+
+<ng-template #template>
+  <div class="modal-body">
+    <div class="p-3 border-radius">
+      <div class="row justify-content-center">
+        <div
+          class="custom-button pointer"
+          (click)="openModal3(template3); closeModal(1)"
+        >
+          EDIT STAFF MEMBER
+        </div>
+      </div>
+
+      <div
+        class="blue-text text-center pt-4 pb-2 pointer"
+        (click)="openModal2(template2); closeModal(1)"
+      >
+        DELETE STAFF MEMBER
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #template2>
+  <div class="modal-body">
+    <div class="p-3 border-radius">
+      <div class="row">
+        <div class="col-1 pointer" (click)="openModal1(template); closeModal(2)">
+          <img src="assets/icons/arrow-left.svg" />
+        </div>
+        <div class="col pe-0">
+          <div class="fs-20 fw-b ms-3">
+            Are You Sure You Want To Delete Staff Member?
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-5">
+        <div class="custom-button-red pointer" (click)="deleteMember()">
+          DELETE MEMBER
+        </div>
+      </div>
+
+      <div
+        class="blue-text text-center pt-4 pb-4"
+        (click)="openModal1(template); closeModal(2); closeModal(1)"
+      >
+        KEEP MEMBER
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #template3>
+  <div class="modal-body">
+    <div class="p-3 border-radius">
+      <div class="row">
+        <div class="col">
+          <div class="fs-24 fw-800 ms-3">Edit Staff Member</div>
+        </div>
+        <div
+          class="col-2 d-flex align-items-center justify-content-center pointer"
+          (click)="closeModal(3)"
+        >
+          <img src="assets/icons/close-circle.svg" />
+        </div>
+      </div>
+
+      <div class="blue-border-container mb-2 mt-4">
+        <input
+          type="text"
+          class="form-control border-0 shadow-none"
+          id="first-name"
+          placeholder="First Name"
+          [(ngModel)]="member.name"
+        />
+      </div>
+
+      <div class="blue-border-container my-2">
+        <input
+          type="text"
+          class="form-control border-0 shadow-none"
+          id="last-name"
+          placeholder="Last Name"
+          [(ngModel)]="member.surname"
+        />
+      </div>
+
+      <div class="my-4 d-flex justify-content-center">
+        <img src="assets/icons/modal-progress-1.svg" />
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="custom-button pointer" (click)="openModal4(template4); closeModal(3)">NEXT</div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #template4>
+  <div class="modal-body">
+    <div class="p-2 border-radius">
+      <div class="row">
+        <div class="col-1 d-flex align-items-center pointer" (click)="openModal3(template3); closeModal(4)">
+          <img src="assets/icons/arrow-left.svg" />
+        </div>
+        <div class="col pe-0">
+          <div class="fs-24 fw-800 ms-3">Edit Staff Member</div>
+        </div>
+        <div
+          class="col-2 d-flex align-items-center justify-content-center pointer"
+          (click)="closeModal(4)"
+        >
+          <img src="assets/icons/close-circle.svg" />
+        </div>
+      </div>
+      <div class="fs-24 fw-600 mb-3 mt-5">Avatar</div>
+
+      <div class="row justify-content-center mb-2">
+        <div
+          *ngFor="let avatar of avatars; let i = index"
+          class="mw-55 mx-2 my-1 d-flex justify-content-center pointer"
+        >
+          <img
+            [ngClass]="toggle[i] ? 'dark' : 'null'"
+            class="my-2"
+            (click)="assignAvatar(i)"
+            src="{{ avatars[i] }}"
+          />
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="custom-button pointer" (click)="updateMember()">
+          UPDATE STAFF MEMBER
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

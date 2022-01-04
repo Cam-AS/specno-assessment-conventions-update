@@ -1,0 +1,35 @@
+.overlay-button {
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+}
+
+.dark {
+  outline: 4px solid #475569;
+  border-radius: 50px;
+}
+
+.border-radius {
+  border-radius: 8px;
+}
+
+.blue-border-container {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e8f3fc;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.counter-container {
+  width: 100%;
+  padding-right: 10px;
+}
+
+.search-bar {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e8f3fc;
+  border-radius: 8px;
+  padding: 10px;
+}

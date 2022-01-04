@@ -1,0 +1,21 @@
+.blue-border-container {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e8f3fc;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.dark {
+  outline: 4px solid #475569;
+  border-radius: 50px;
+}
+
+.shade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10000;
+}

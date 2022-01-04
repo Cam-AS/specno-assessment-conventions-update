@@ -1,0 +1,84 @@
+<div class="container my-3 max-width-1000">
+  <div *ngIf="isFormValid" class="snackbar">Please fill in all fields.</div>
+
+  <div class="row mb-5">
+    <div class="col-1 pointer" (click)="back()">
+      <img src="assets/icons/arrow-left.svg" />
+    </div>
+    <div class="col d-flex justify-content-center">
+      <div class="fs-18">New Office</div>
+    </div>
+    <div class="col-1"></div>
+  </div>
+
+  <div class="mt-5">
+    <div class="blue-border-container my-4">
+      <input
+        type="text"
+        class="form-control border-0 shadow-none"
+        id="office-name"
+        placeholder="Office Name"
+        [(ngModel)]="office.name"
+      />
+    </div>
+    <div class="blue-border-container my-4">
+      <input
+        type="text"
+        class="form-control border-0 shadow-none"
+        id="physical-address"
+        placeholder="Physical Address"
+        [(ngModel)]="office.address"
+      />
+    </div>
+    <div class="blue-border-container my-4">
+      <input
+        type="email"
+        class="form-control border-0 shadow-none"
+        id="email-address"
+        placeholder="Email Address"
+        [(ngModel)]="office.email"
+      />
+    </div>
+    <div class="blue-border-container my-4">
+      <input
+        type="tel"
+        class="form-control border-0 shadow-none"
+        id="phone-number"
+        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+        placeholder="Phone Number"
+        [(ngModel)]="office.phone"
+      />
+    </div>
+    <div class="blue-border-container my-4">
+      <input
+        type="number"
+        class="form-control border-0 shadow-none"
+        id="maximum-capacity"
+        placeholder="Maximum Capacity"
+        [(ngModel)]="office.capacity"
+      />
+    </div>
+
+    <h3 class="fw-600 my-3">Office Color</h3>
+
+    <div class="row justify-content-center mb-2">
+      <div
+        *ngFor="let color of colors; let i = index"
+        class="mw-43 mx-2 my-1 d-flex justify-content-center pointer"
+      >
+        <img
+          [ngClass]="toggle[i] ? 'dark' : 'null'"
+          class="my-2"
+          (click)="assignColor(i)"
+          src="{{ colors[i] }}"
+        />
+      </div>
+    </div>
+
+    <div class="mt-4 mb-5">
+      <div class="row justify-content-center">
+        <div class="custom-button pointer" (click)="addOffice()">ADD OFFICE</div>
+      </div>
+    </div>
+  </div>
+</div>

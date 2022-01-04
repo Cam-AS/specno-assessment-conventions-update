@@ -1,0 +1,224 @@
+<div *ngIf="office != null">
+  <div class="stripes-box blue-stripes ps-2 mb-4">
+    <div class="card d-flex pointer">
+      <div class="row mt-2">
+        <div class="col ms-3 mt-1">
+          <h3 class="fw-800">{{ office.name }}</h3>
+        </div>
+        <div class="col d-flex justify-content-end">
+          <div class="icon me-3" (click)="editOfficeClicked(office.id)">
+            <img src="assets/icons/edit.svg" />
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="row py-2 flex-nowrap align-items-center"
+        (click)="officeCardClicked(office.id)"
+      >
+        <div class="col-2 mw-70">
+          <div class="wh-24 ms-3">
+            <img src="assets/icons/people.svg" />
+          </div>
+        </div>
+        <div class="col-8 justify-content-start">
+          <div class="fs-12 ps-2 text-color">
+            <strong>{{ office.members.length }}</strong> Staff Members in Office
+          </div>
+        </div>
+        <div class="col"></div>
+      </div>
+
+      <div class="px-3">
+        <div class="my-3 horizontal-line"></div>
+      </div>
+
+      <div class="row flex-nowrap" (click)="toggleSingleDrawer()">
+        <div class="col-6 ms-4 d-flex justify-content-end align-items-center">
+          <div class="fs-12">More info</div>
+        </div>
+        <div
+          class="col-5 d-flex justify-content-start"
+          [ngClass]="open ? 'rotate' : 'up'"
+        >
+          <div class="chevron">
+            <img src="assets/icons/chevron.svg" />
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="dropdown"
+        [ngClass]="open ? 'show' : 'hide'"
+        (click)="officeCardClicked(office.id)"
+      >
+        <div class="row pb-2 pt-3 flex-nowrap align-items-center">
+          <div class="col-2 mw-70">
+            <div class="wh-24 ms-3">
+              <img src="assets/icons/phone.svg" />
+            </div>
+          </div>
+          <div class="col-8 justify-content-start">
+            <div class="fs-12 ps-2 fw-400">{{ office.phone }}</div>
+          </div>
+          <div class="col"></div>
+        </div>
+
+        <div class="row py-2 flex-nowrap align-items-center">
+          <div class="col-2 mw-70">
+            <div class="wh-24 ms-3">
+              <img src="assets/icons/email.svg" />
+            </div>
+          </div>
+          <div class="col-8 justify-content-start">
+            <div class="fs-12 ps-2">{{ office.email }}</div>
+          </div>
+          <div class="col"></div>
+        </div>
+
+        <div class="row py-2 flex-nowrap align-items-center">
+          <div class="col-2 mw-70">
+            <div class="wh-24 ms-3">
+              <img src="assets/icons/broken-people.svg" />
+            </div>
+          </div>
+          <div class="col-8 justify-content-start">
+            <div class="fs-12 ps-2">Office Capacity: {{ office.capacity }}</div>
+          </div>
+          <div class="col"></div>
+        </div>
+
+        <div class="row py-2 flex-nowrap align-items-center">
+          <div class="col-2 mw-70">
+            <div class="wh-24 ms-3">
+              <img src="assets/icons/location.svg" />
+            </div>
+          </div>
+          <div class="col-8 justify-content-start">
+            <div class="fs-12 ps-2">
+              {{ office.address }}
+            </div>
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="offices != null">
+  <div *ngFor="let office of offices; let i = index">
+    <div
+      [ngStyle]="{'background': fetchColor(office.color)}"
+      class="stripes-box ps-2 mb-4"
+    >
+      <div class="card d-flex pointer">
+        <div class="row mt-2">
+          <div class="col ms-3 mt-1">
+            <h3 class="fw-800">{{ office.name }}</h3>
+          </div>
+          <div class="col d-flex justify-content-end">
+            <div class="icon me-3" (click)="editOfficeClicked(office.id)">
+              <img src="assets/icons/edit.svg" />
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="row py-2 flex-nowrap align-items-center"
+          (click)="officeCardClicked(office.id)"
+        >
+          <div class="col-2 mw-70">
+            <div class="wh-24 ms-3">
+              <img src="assets/icons/people.svg" />
+            </div>
+          </div>
+          <div class="col-8 justify-content-start">
+            <!-- <div class="fs-12 fw-700 py-2">5&nbsp;</div> -->
+            <div class="fs-12 ps-2 text-color">
+              <strong>{{ office.members.length }}</strong> Staff Members in
+              Office
+            </div>
+          </div>
+          <div class="col"></div>
+        </div>
+
+        <div class="px-3">
+          <div class="my-3 horizontal-line"></div>
+        </div>
+
+        <div class="row flex-nowrap" (click)="toggleDrawer(i)">
+          <div class="col-6 ms-4 d-flex justify-content-end align-items-center">
+            <div class="fs-12">More info</div>
+          </div>
+          <div
+            class="col-5 d-flex justify-content-start"
+            [ngClass]="status[i] ? 'rotate' : 'up'"
+          >
+            <div class="chevron">
+              <img src="assets/icons/chevron.svg" />
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="dropdown"
+          [ngClass]="status[i] ? 'show' : 'hide'"
+          (click)="officeCardClicked(office.id)"
+        >
+          <div class="row pb-2 pt-3 flex-nowrap align-items-center">
+            <div class="col-2 mw-70">
+              <div class="wh-24 ms-3">
+                <img src="assets/icons/phone.svg" />
+              </div>
+            </div>
+            <div class="col-8 justify-content-start">
+              <div class="fs-12 ps-2 fw-400">{{ office.phone }}</div>
+            </div>
+            <div class="col"></div>
+          </div>
+
+          <div class="row py-2 flex-nowrap align-items-center">
+            <div class="col-2 mw-70">
+              <div class="wh-24 ms-3">
+                <img src="assets/icons/email.svg" />
+              </div>
+            </div>
+            <div class="col-8 justify-content-start">
+              <div class="fs-12 ps-2">{{ office.email }}</div>
+            </div>
+            <div class="col"></div>
+          </div>
+
+          <div class="row py-2 flex-nowrap align-items-center">
+            <div class="col-2 mw-70">
+              <div class="wh-24 ms-3">
+                <img src="assets/icons/broken-people.svg" />
+              </div>
+            </div>
+            <div class="col-8 justify-content-start">
+              <div class="fs-12 ps-2">
+                Office Capacity: {{ office.capacity }}
+              </div>
+            </div>
+            <div class="col"></div>
+          </div>
+
+          <div class="row py-2 flex-nowrap align-items-center">
+            <div class="col-2 mw-70">
+              <div class="wh-24 ms-3">
+                <img src="assets/icons/location.svg" />
+              </div>
+            </div>
+            <div class="col-8 justify-content-start">
+              <div class="fs-12 ps-2">
+                {{ office.address }}
+              </div>
+            </div>
+            <div class="col"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

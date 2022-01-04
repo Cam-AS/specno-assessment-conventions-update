@@ -1,0 +1,196 @@
+<div class="container my-3 max-width-1000">
+  <div *ngIf="isFormValid" class="snackbar">Please fill in all fields.</div>
+  
+  <div class="row mb-3">
+    <div class="col-1 pointer" (click)="back()">
+      <img src="assets/icons/arrow-left.svg" />
+    </div>
+    <div class="col d-flex justify-content-center">
+      <div class="fs-18">Office</div>
+    </div>
+    <div class="col-1"></div>
+  </div>
+
+  <app-office-card [office]="office"></app-office-card>
+
+  <div class="search-bar">
+    <div class="row">
+      <div class="col">
+        <input
+          type="text"
+          class="form-control border-0 shadow-none"
+          id="email-input"
+          placeholder="Search"
+          [(ngModel)]="search"
+          (input)="onSearchChange(search)"
+        />
+      </div>
+      <div class="col-2 d-flex align-items-center justify-content-end">
+        <div class="me-2">
+          <img src="assets/icons/search.svg" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-4 pt-2">
+    <div class="counter-container">
+      <div class="row">
+        <div class="col">
+          <div class="fs-24 fw-600">Staff Members In Office</div>
+        </div>
+        <div class="col-2 d-flex align-items-center justify-content-end">
+          <div>
+            <div class="fs-18">{{ members.length }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="searchResults.length == 0 && !noResults">
+    <div *ngFor="let member of members">
+      <app-member-overview [member]="member"></app-member-overview>
+    </div>
+  </div>
+
+  <div *ngIf="members.length == 0">
+    <div class="row justify-content-center mt-5">No Members Added.</div>
+  </div>
+  
+  <div *ngIf="searchResults.length != 0">
+    <div *ngFor="let member of searchResults">
+      <app-member-overview [member]="member"></app-member-overview>
+    </div>
+  </div>
+
+  <div *ngIf="noResults && searchResults.length == 0">
+    <div class="row justify-content-center mt-5">No Matching Results.</div>
+  </div>
+
+  <div
+    class="overlay-button pointer"
+    data-bs-toggle="modal"
+    data-bs-target="#add-new-member-modal-1"
+  >
+    <img src="assets/icons/add-button.svg" />
+  </div>
+
+  <div
+    class="modal fade"
+    id="add-new-member-modal-1"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="staticBackdropLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3 border-radius">
+        <div class="row">
+          <div class="col">
+            <div class="fs-24 fw-800 ms-3">New Staff Member</div>
+          </div>
+          <div
+            class="col-2 d-flex align-items-center justify-content-center pointer"
+            data-bs-dismiss="modal"
+          >
+            <img src="assets/icons/close-circle.svg" />
+          </div>
+        </div>
+
+        <div class="blue-border-container mb-2 mt-4">
+          <input
+            type="text"
+            class="form-control border-0 shadow-none"
+            id="first-name"
+            placeholder="First Name"
+            [(ngModel)]="member.name"
+          />
+        </div>
+
+        <div class="blue-border-container my-2">
+          <input
+            type="text"
+            class="form-control border-0 shadow-none"
+            id="last-name"
+            placeholder="Last Name"
+            [(ngModel)]="member.surname"
+          />
+        </div>
+
+        <div class="my-4 d-flex justify-content-center">
+          <img src="assets/icons/modal-progress-1.svg" />
+        </div>
+
+        <div class="row justify-content-center">
+          <div
+            class="custom-button pointer"
+            data-bs-toggle="modal"
+            data-bs-target="#add-new-member-modal-2"
+          >
+            NEXT
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal fade"
+    id="add-new-member-modal-2"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="staticBackdropLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3 border-radius">
+        <div class="row">
+          <div
+            class="col-1 d-flex align-items-center pointer"
+            data-bs-toggle="modal"
+            data-bs-target="#add-new-member-modal-1"
+          >
+            <img src="assets/icons/arrow-left.svg" />
+          </div>
+          <div class="col pe-0">
+            <div class="fs-24 fw-800 ms-3">New Staff Member</div>
+          </div>
+          <div
+            class="col-2 d-flex align-items-center justify-content-center pointer"
+            data-bs-dismiss="modal"
+          >
+            <img src="assets/icons/close-circle.svg" />
+          </div>
+        </div>
+        <div class="fs-24 fw-600 my-3">Avatar</div>
+
+        <div class="row justify-content-center mb-2">
+          <div
+            *ngFor="let avatar of avatars; let i = index"
+            class="mw-55 mx-2 my-1 d-flex justify-content-center pointer"
+          >
+            <img
+              [ngClass]="toggle[i] ? 'dark' : 'null'"
+              class="my-2"
+              (click)="assignAvatar(i)"
+              src="{{ avatars[i] }}"
+            />
+          </div>
+        </div>
+
+        <div class="my-4 d-flex justify-content-center">
+          <img src="assets/icons/modal-progress-2.svg" />
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="custom-button pointer" (click)="addMember()">
+            ADD STAFF MEMBER
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
