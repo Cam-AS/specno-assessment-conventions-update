@@ -6,7 +6,7 @@
     <div class="col">
       <div class="ms-2">{{ member.name + " " + member.surname }}</div>
     </div>
-    <div class="col-2 d-flex justify-content-center pointer" (click)="openModal1(template)">
+    <div class="col-2 d-flex justify-content-center g-pointer" (click)="openModal1(template)">
       <img src="assets/icons/elipse.svg" />
     </div>
   </div>
@@ -17,7 +17,7 @@
     <div class="p-3 border-radius">
       <div class="row justify-content-center">
         <div
-          class="custom-button pointer"
+          class="g-custom-button g-pointer"
           (click)="openModal3(template3); closeModal(1)"
         >
           EDIT STAFF MEMBER
@@ -25,7 +25,7 @@
       </div>
 
       <div
-        class="blue-text text-center pt-4 pb-2 pointer"
+        class="blue-text text-center pt-4 pb-2 g-pointer"
         (click)="openModal2(template2); closeModal(1)"
       >
         DELETE STAFF MEMBER
@@ -38,7 +38,7 @@
   <div class="modal-body">
     <div class="p-3 border-radius">
       <div class="row">
-        <div class="col-1 pointer" (click)="openModal1(template); closeModal(2)">
+        <div class="col-1 g-pointer" (click)="openModal1(template); closeModal(2)">
           <img src="assets/icons/arrow-left.svg" />
         </div>
         <div class="col pe-0">
@@ -48,7 +48,7 @@
         </div>
       </div>
       <div class="row justify-content-center mt-5">
-        <div class="custom-button-red pointer" (click)="deleteMember()">
+        <div class="g-custom-button-red g-pointer" (click)="deleteMember()">
           DELETE MEMBER
         </div>
       </div>
@@ -71,7 +71,7 @@
           <div class="fs-24 fw-800 ms-3">Edit Staff Member</div>
         </div>
         <div
-          class="col-2 d-flex align-items-center justify-content-center pointer"
+          class="col-2 d-flex align-items-center justify-content-center g-pointer"
           (click)="closeModal(3)"
         >
           <img src="assets/icons/close-circle.svg" />
@@ -103,7 +103,7 @@
       </div>
 
       <div class="row justify-content-center">
-        <div class="custom-button pointer" (click)="openModal4(template4); closeModal(3)">NEXT</div>
+        <div class="g-custom-button g-pointer" (click)="openModal4(template4); closeModal(3)">NEXT</div>
       </div>
     </div>
   </div>
@@ -113,14 +113,14 @@
   <div class="modal-body">
     <div class="p-2 border-radius">
       <div class="row">
-        <div class="col-1 d-flex align-items-center pointer" (click)="openModal3(template3); closeModal(4)">
+        <div class="col-1 d-flex align-items-center g-pointer" (click)="openModal3(template3); closeModal(4)">
           <img src="assets/icons/arrow-left.svg" />
         </div>
         <div class="col pe-0">
           <div class="fs-24 fw-800 ms-3">Edit Staff Member</div>
         </div>
         <div
-          class="col-2 d-flex align-items-center justify-content-center pointer"
+          class="col-2 d-flex align-items-center justify-content-center g-pointer"
           (click)="closeModal(4)"
         >
           <img src="assets/icons/close-circle.svg" />
@@ -131,7 +131,7 @@
       <div class="row justify-content-center mb-2">
         <div
           *ngFor="let avatar of avatars; let i = index"
-          class="mw-55 mx-2 my-1 d-flex justify-content-center pointer"
+          class="mw-55 mx-2 my-1 d-flex justify-content-center g-pointer"
         >
           <img
             [ngClass]="toggle[i] ? 'dark' : 'null'"
@@ -143,7 +143,7 @@
       </div>
 
       <div class="row justify-content-center">
-        <div class="custom-button pointer" (click)="updateMember()">
+        <div class="g-custom-button g-pointer" (click)="updateMember()">
           UPDATE STAFF MEMBER
         </div>
       </div>

@@ -1,6 +1,6 @@
 <div class="container my-3 mw-1000">
   <div class="row mb-5">
-    <div class="col-1 pointer" (click)="back()">
+    <div class="col-1 g-pointer" (click)="back()">
       <img src="assets/icons/arrow-left.svg" />
     </div>
     <div class="col d-flex justify-content-center">
@@ -62,7 +62,7 @@
       <div class="row justify-content-center mb-2">
         <div
           *ngFor="let color of colors; let i = index"
-          class="mw-43 mx-2 my-1 d-flex justify-content-center pointer"
+          class="mw-43 mx-2 my-1 d-flex justify-content-center g-pointer"
         >
           <img
             [ngClass]="toggle[i] ? 'dark' : 'null'"
@@ -75,12 +75,12 @@
     
       <div class="my-4">
         <div class="row justify-content-center">
-          <div class="custom-button pointer" (click)="saveOffice()">UPDATE OFFICE</div>
+          <div class="g-custom-button g-pointer" (click)="saveOffice()">UPDATE OFFICE</div>
         </div>
       </div>
      
       <div class="mb-5">
-        <div class="row blue-text text-center justify-content-center pointer">
+        <div class="row blue-text text-center justify-content-center g-pointer">
           <div class="" (click)="deleteOffice()">DELETE OFFICE</div>
         </div>
       </div>

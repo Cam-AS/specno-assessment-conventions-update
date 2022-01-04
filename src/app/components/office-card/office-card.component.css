@@ -10,11 +10,20 @@
   padding: 10px;
 }
 
+.horizontal-line {
+  height: 1px;
+  border-top: 0.4px solid var(--horizontalLineBlue);
+}
+
 .stripes-box {
   border-bottom-left-radius: 8px;
   border-top-left-radius: 8px;
   border-bottom-right-radius: 8px;
   border-top-right-radius: 8px;
+}
+
+.text-color {
+  color: #484954;
 }
 
 .hide {

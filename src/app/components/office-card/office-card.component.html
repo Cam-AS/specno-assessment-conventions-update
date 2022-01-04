@@ -1,6 +1,6 @@
 <div *ngIf="office != null">
   <div class="stripes-box blue-stripes ps-2 mb-4">
-    <div class="card d-flex pointer">
+    <div class="card d-flex g-pointer">
       <div class="row mt-2">
         <div class="col ms-3 mt-1">
           <h3 class="fw-800">{{ office.name }}</h3>
@@ -112,7 +112,7 @@
       [ngStyle]="{'background': fetchColor(office.color)}"
       class="stripes-box ps-2 mb-4"
     >
-      <div class="card d-flex pointer">
+      <div class="card d-flex g-pointer">
         <div class="row mt-2">
           <div class="col ms-3 mt-1">
             <h3 class="fw-800">{{ office.name }}</h3>

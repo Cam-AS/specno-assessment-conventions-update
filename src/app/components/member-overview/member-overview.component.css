@@ -6,6 +6,18 @@
   padding: 10px;
 }
 
+.custom-button-red {
+  background: var(--darkRed);
+  border-radius: var(--border100);
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: var(--offWhite);
+  max-width: 232px;
+}
+
 .dark {
   outline: 4px solid #475569;
   border-radius: 50px;

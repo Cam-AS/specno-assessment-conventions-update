@@ -1,8 +1,8 @@
 <div class="container my-3 mw-1000">
-  <div *ngIf="isFormValid" class="snackbar">Please fill in all fields.</div>
+  <div *ngIf="isFormValid" class="g-snackbar">Please fill in all fields.</div>
 
   <div class="row mb-5">
-    <div class="col-1 pointer" (click)="back()">
+    <div class="col-1 g-pointer" (click)="back()">
       <img src="assets/icons/arrow-left.svg" />
     </div>
     <div class="col d-flex justify-content-center">
@@ -64,7 +64,7 @@
     <div class="row justify-content-center mb-2">
       <div
         *ngFor="let color of colors; let i = index"
-        class="mw-43 mx-2 my-1 d-flex justify-content-center pointer"
+        class="mw-43 mx-2 my-1 d-flex justify-content-center g-pointer"
       >
         <img
           [ngClass]="toggle[i] ? 'dark' : 'null'"
@@ -77,7 +77,7 @@
 
     <div class="mt-4 mb-5">
       <div class="row justify-content-center">
-        <div class="custom-button pointer" (click)="addOffice()">ADD OFFICE</div>
+        <div class="g-custom-button g-pointer" (click)="addOffice()">ADD OFFICE</div>
       </div>
     </div>
   </div>
