@@ -15,25 +15,11 @@
       "id": 2
     },
     {
-      "name": "",
-      "phone": "",
-      "address": "",
-      "membership": "",
+      "name": "Cameron Lloyd Kirkpatrick",
+      "phone": "0635776445",
+      "address": "184 Uys Road",
+      "membership": "Platinum",
       "id": 3
-    },
-    {
-      "name": null,
-      "phone": null,
-      "address": null,
-      "membership": null,
-      "id": 4
-    },
-    {
-      "name": null,
-      "phone": null,
-      "address": null,
-      "membership": null,
-      "id": 5
     }
   ]
 }
